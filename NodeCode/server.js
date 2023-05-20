@@ -20,7 +20,7 @@ MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
     // Enable CORS
     const corsOptions = {
-      origin: 'https://crud-application4.onrender.com',
+      origin: 'https://6468d4f38d6d8d271a016023--celadon-tartufo-cae09e.netlify.app/',
       optionsSuccessStatus: 200
     };
     app.use(cors(corsOptions));
