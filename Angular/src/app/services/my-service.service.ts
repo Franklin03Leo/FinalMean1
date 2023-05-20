@@ -5,28 +5,26 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class MyServiceService {
+  private url: string = 'https://crud-application4.onrender.com/'; //'http://localhost:3000/';
   
-  constructor(private http : HttpClient) { }
-
-  // let url = 'http://localhost:3000/';
+  constructor(private http : HttpClient ) { }
 
   postData(data : any){
-
-    return this.http.post<any>('http://localhost:3000/create', data);
+    return this.http.post<any>(`${this.url}create`, data);
   }
 
   getAllData(){
-    return this.http.get<any>('http://localhost:3000/getData');
+    return this.http.get<any>(`${this.url}getData`);
   }
 
   updateDetails(data: any) {
     let id = data._id;
     console.log('data', id);
-    return this.http.put<any>(`http://localhost:3000/updateData/${id}`, data);
+    return this.http.put<any>(`${this.url}updateData/${id}`, data);
   }
 
   deletedata(id: any) {
     console.log('data', id);
-    return this.http.delete<any>(`http://localhost:3000/deleteData/${id}`);
+    return this.http.delete<any>(`${this.url}deleteData/${id}`);
   }
 }
