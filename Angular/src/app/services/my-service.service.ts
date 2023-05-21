@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class MyServiceService {
-  private url: string = 'https://crud-application4.onrender.com/'; //'http://localhost:3000/';
+  private url: string = 'https://crud-application4.onrender.com/' //'http://localhost:3000/'; //
   
   constructor(private http : HttpClient ) { }
 
@@ -14,6 +14,7 @@ export class MyServiceService {
   }
 
   getAllData(){
+    console.log('getData')
     return this.http.get<any>(`${this.url}getData`);
   }
 

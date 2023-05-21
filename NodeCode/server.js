@@ -20,10 +20,11 @@ MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
     // Enable CORS
     const corsOptions = {
-      origin: 'https://6468d4f38d6d8d271a016023--celadon-tartufo-cae09e.netlify.app/',
+      origin: process.env.BASE_URL,//"http://localhost:4200",
       optionsSuccessStatus: 200
     };
     app.use(cors(corsOptions));
+
 
     // Parse incoming requests with JSON payloads
     app.use(bodyParser.json());
